@@ -1,32 +1,78 @@
 $(document).ready(function(){
+    //    $("#block").animate(
+    //        {
+    //            left:"+50px",
+    //        }
+    //        );
+
     jQuery.extend(
         jQuery.easing,
         {
             easeInExpo:function (x, t, b, c, d) {
-                            return 9.8*t*t/2;
+                            return t*t;
+//                            return 9.8*t*t/2;
                         },
         });
 
-    $("#one_start").click(function() {
+    $("#one_fall").click(function() {
         $("#block").animate(
             {
                 top:"500px",
             },
             "normal",
-            "easeInQuart"
+            "easeInCirc"
             );
     });
 
-    $("#any_start").click(function() {
+    $("#any_fall").click(function() {
         $("<div />").addClass('block').appendTo($("#sandbox")).css({
-            'top':0,
             'left':Math.random() * 500,
         }).animate(
             {
                 top:"500px",
             },
             "normal",
-            "easeInQuart"
+            "easeInCirc"
+        );
+    });
+
+    $("#any_up").click(function() {
+        $("<div />").addClass('block').appendTo($("#sandbox")).css({
+            top:"500px",
+            'left':Math.random() * 500,
+        }).animate(
+            {
+                top:"0px",
+            },
+            "normal",
+            "easeOutCirc"
+        ).animate(
+            {
+                top:"500px",
+            },
+            "normal",
+            "easeInCirc"
+        );
+    });
+
+    $("#any_arrow").click(function() {
+        $("<div />").addClass('block').appendTo($("#sandbox")).css({
+            top:"500px",
+            'left':'0px'
+        }).animate(
+            {
+                top:"0px",
+                left:"300px",
+            },
+            "normal",
+            "easeOutCirc"
+        ).animate(
+            {
+                top:"500px",
+                left:"600px",
+            },
+            "normal",
+            "easeInCirc"
         );
     });
 });
