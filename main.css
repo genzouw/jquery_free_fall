@@ -2,7 +2,8 @@
   font-family: monospace;
 }
 
-html, body {
+html,
+body {
   height: 99%;
   margin: 0;
   padding: 0;
@@ -21,7 +22,7 @@ body {
 }
 
 div.list-area table {
-    /*table-layout: fixed;*/
+  /* table-layout: fixed; */
   border-collapse: collapse;
   empty-cells: show;
   border: 2px solid #663300;
